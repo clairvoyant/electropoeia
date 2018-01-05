@@ -17,7 +17,14 @@ Dependencies
 ------------
    * NewPing HC-SR04 library. https://bitbucket.org/teckel12/arduino-new-ping/src
    * Tone
-
+   
+   
+Tools
+-----
+   * Arduino IDE
+   * Fritzing
+   * Kicad
+   * LibreCAD
 Notes
 ------
 The NewPing uses timer2 as the tone library. Both of them collides by default. 
