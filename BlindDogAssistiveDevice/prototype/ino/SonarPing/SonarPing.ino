@@ -3,8 +3,8 @@
 // This prototype is intended to be used as a proof of concept 
 // during the development of a helping product for visual impaired dogs. 
 //
-// Dog acoustic range: 67 - 45 Khz
-// HC-SR04:                 40 Khz
+// Dog acoustic range: 67 Hz - 45 Khz
+// HC-SR04:                    40 Khz
 //
 // There is a risk the sonar can be annoying for the dog. 
 //
@@ -40,7 +40,7 @@ NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
 //
 void setup() {
   Serial.begin(9600);            // initialize the serial port to the same bauds as the default programmer:
-  tone(BUZZER_PIN, 300);
+  tone(BUZZER_PIN, 300, 50);
   Serial.println("Ready!");
 
 }
@@ -57,6 +57,8 @@ void loop()
 
    if ((distance >= MIN_DISTANCE) and (distance<=MAX_DISTANCE)) {
          tone(BUZZER_PIN, 500);
+   } else {
+      noTone(BUZZER_PIN);
    }
 }
 
